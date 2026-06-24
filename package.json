@@ -1,0 +1,21 @@
+{
+  "name": "shrey-kapoor-website",
+  "version": "1.0.0",
+  "description": "Personal/academic website for Shrey Kapoor",
+  "type": "module",
+  "scripts": {
+    "dev": "python3 -m http.server 8000",
+    "lint": "echo 'No linter configured for static HTML site'"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^1.4.1"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "portfolio",
+    "static-site",
+    "academic"
+  ],
+  "author": "Shrey Kapoor",
+  "license": "MIT"
+}
