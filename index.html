@@ -1037,58 +1037,24 @@
     <sc-if value="{{ isTeaching }}" hint-placeholder-val="abc">
     <div data-screen-label="Teaching" style="max-width:980px;margin:0 auto;padding:84px 40px 96px;">
       <h2 style="font-family:var(--display,'Frank Ruhl Libre'),serif;font-weight:400;font-size:46px;letter-spacing:-0.015em;color:#1c1b18;margin:0 0 12px;">Teaching</h2>
-      <p style="font-family:'IBM Plex Sans',sans-serif;font-size:17px;line-height:1.7;color:#3f3b34;margin:0 0 8px;max-width:640px;">Courses at PhD, MA and BA levels in research methods, interdisciplinarity, and the politics of violence and repression, taught at Zürich, Basel and Cornell.</p>
+      <p style="font-family:'IBM Plex Sans',sans-serif;font-size:17px;line-height:1.7;color:#3f3b34;margin:0 0 8px;max-width:640px;">Current courses at PhD, MA and BA levels in research methods, interdisciplinarity, and the politics of repression, at the University of Basel and the University of Zürich. A full teaching record is in the <a href="uploads/Shrey-Kapoor-CV.pdf" style="color:var(--accent,#295fa0);text-decoration:none;" style-hover="text-decoration:underline;">CV</a>.</p>
 
-      <!-- Zürich -->
+      <!-- Current courses -->
       <section style="margin-top:56px;">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#3f3b34;padding-bottom:10px;border-bottom:1px solid #d6d2c8;">University of Zürich</div>
-        <sc-for list="{{ teachingUZH }}" as="grp" hint-placeholder-count="1">
-          <div style="padding:18px 0;border-bottom:1px solid #eae7df;">
-            <div>
-              <sc-for list="{{ grp.courses }}" as="c" hint-placeholder-count="1">
-                <div style="margin-bottom:8px;"><span style="font-family:var(--display,'Frank Ruhl Libre'),serif;font-size:18px;color:#232220;">{{ c.title }}</span> <span style="font-family:'IBM Plex Sans',sans-serif;font-size:13px;color:#8a857b;">· {{ c.level }}</span></div>
-              </sc-for>
-            </div>
-          </div>
-        </sc-for>
-      </section>
-
-      <!-- Basel -->
-      <section style="margin-top:48px;">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#3f3b34;padding-bottom:10px;border-bottom:1px solid #d6d2c8;">University of Basel</div>
-        <sc-for list="{{ teachingBasel }}" as="grp" hint-placeholder-count="6">
-          <div style="padding:18px 0;border-bottom:1px solid #eae7df;">
-            <div>
-              <sc-for list="{{ grp.courses }}" as="c" hint-placeholder-count="2">
-                <div style="margin-bottom:8px;"><span style="font-family:var(--display,'Frank Ruhl Libre'),serif;font-size:18px;color:#232220;">{{ c.title }}</span> <span style="font-family:'IBM Plex Sans',sans-serif;font-size:13px;color:#8a857b;">· {{ c.level }}</span></div>
-              </sc-for>
-            </div>
-          </div>
-        </sc-for>
-      </section>
-
-      <!-- Cornell -->
-      <section style="margin-top:48px;">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#3f3b34;padding-bottom:10px;border-bottom:1px solid #d6d2c8;">Cornell University</div>
-        <sc-for list="{{ teachingCornell }}" as="grp" hint-placeholder-count="2">
-          <div style="padding:18px 0;border-bottom:1px solid #eae7df;">
-            <div>
-              <sc-for list="{{ grp.courses }}" as="c" hint-placeholder-count="1">
-                <div style="margin-bottom:8px;"><span style="font-family:var(--display,'Frank Ruhl Libre'),serif;font-size:18px;color:#232220;">{{ c.title }}</span> <span style="font-family:'IBM Plex Sans',sans-serif;font-size:13px;color:#8a857b;">· {{ c.level }}</span></div>
-              </sc-for>
-            </div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#3f3b34;padding-bottom:10px;border-bottom:1px solid #d6d2c8;">Current courses</div>
+        <sc-for list="{{ courses }}" as="c" hint-placeholder-count="5">
+          <div style="padding:26px 0;border-bottom:1px solid #eae7df;">
+            <div style="font-family:var(--display,'Frank Ruhl Libre'),serif;font-size:21px;line-height:1.35;color:#232220;">{{ c.title }}</div>
+            <div style="margin-top:7px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#8a857b;line-height:1.7;">{{ c.meta }}</div>
+            <p style="margin:12px 0 0;font-family:'IBM Plex Sans',sans-serif;font-size:15.5px;line-height:1.68;color:#4a463e;max-width:680px;">{{ c.blurb }}</p>
           </div>
         </sc-for>
       </section>
 
       <!-- Supervision -->
-      <section style="margin-top:56px;">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent,#295fa0);margin-bottom:6px;">Supervision</div>
-        <sc-for list="{{ supervision }}" as="s" hint-placeholder-count="5">
-          <div style="display:flex;gap:16px;padding:14px 0;border-top:1px solid #eae7df;font-family:'IBM Plex Sans',sans-serif;font-size:15.5px;color:#4a463e;line-height:1.55;">
-            <span style="color:var(--accent,#295fa0);flex:none;">·</span><span>{{ s }}</span>
-          </div>
-        </sc-for>
+      <section style="margin-top:48px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#3f3b34;padding-bottom:10px;border-bottom:1px solid #d6d2c8;">Supervision</div>
+        <p style="margin:18px 0 0;font-family:'IBM Plex Sans',sans-serif;font-size:15.5px;line-height:1.68;color:#4a463e;max-width:680px;">Open to supervising MA theses and seminar papers at the University of Basel.</p>
       </section>
     </div>
     </sc-if>
@@ -1294,24 +1260,12 @@ class Component extends DCLogic {
       { years:'2013', place:'India, six states', text:'Rural collective-action organizations across West Bengal, Bihar, Rajasthan, Maharashtra, Andhra Pradesh and Madhya Pradesh.', dur:'6 months' }
     ];
 
-    const teachingUZH = [
-      { term:'', courses:[ {title:'Mixed Methods in the Social Sciences: Epistemologies, Practices, Politics', level:'MA seminar'} ] }
-    ];
-
-    const teachingBasel = [
-      { term:'', courses:[ {title:'Mixed Social Science Methods for European Global Studies', level:'MA seminar'}, {title:'Interdisciplinary Analyses in European Global Studies', level:'MA'}, {title:'Applied Qualitative Methods for Political Science', level:'BA seminar'}, {title:'Advanced Interdisciplinarity for European Global Studies', level:'PhD seminar'}, {title:'Qualitative Approaches to Political Repression', level:'BA seminar'}, {title:'Qualitative Approaches to Studying Transnational Repression', level:'BA seminar'}, {title:'Current Debates in History & Politics', level:'MA colloquium'}, {title:'European Global Studies: Focus Transnational Repression', level:'MA lecture series'}, {title:'Current Debates in Culture & Society', level:'MA colloquium'}, {title:'Interdisciplinary Research Designs for European Global Studies', level:'MA'}, {title:'Global Debates, Eurocentrism and Methodology', level:'MA seminar, TA'}, {title:'Probleme der Eurozentrismuskritik', level:'BA seminar, TA'} ] }
-    ];
-
-    const teachingCornell = [
-      { term:'', courses:[ {title:'International Development', level:'BA lecture, TA'}, {title:'Theories of Development Sociology', level:'BA seminar, TA'} ] }
-    ];
-
-    const supervision = [
-      'First supervisor, MA thesis in Political Science (completed 2024), University of Basel',
-      'First supervisor, MA thesis in Political Science (ongoing), University of Basel',
-      'First supervisor, MA thesis in European Global Studies (completed 2025), University of Basel',
-      'Second supervisor, MA thesis in European Global Studies (ongoing), University of Basel',
-      'Supervised several BA-level senior seminar papers in Political Science, University of Basel'
+    const courses = [
+      {"title":"Advanced Interdisciplinarity for European Global Studies","meta":"PhD seminar · University of Basel · every spring","blurb":"A discussion-based seminar for doctoral students who want to bring interdisciplinary perspectives into their own research. It examines the ontological and epistemological assumptions that underlie different disciplines, and the difficulties that arise when those assumptions are put in question. Students lead the sessions."},
+      {"title":"Mixed Social Science Methods for European Global Studies","meta":"MA seminar · University of Basel (fall) · University of Zürich (spring)","blurb":"This seminar addresses the divide between qualitative and quantitative research in the social sciences. It starts from the differing assumptions of positivist and constructivist approaches and asks what each can and cannot do. The aim is for students to read research from paradigms other than their own and to choose methods suited to their questions. Offered at Zürich as Mixed Methods in the Social Sciences: Epistemologies, Practices, Politics."},
+      {"title":"Applied Qualitative Methods for Political Science","meta":"BA seminar · University of Basel · fall","blurb":"An introduction to qualitative research in political science, with an emphasis on case-study design and interviews. The course covers process tracing, comparative analysis, and interview technique in weekly sessions that combine lecture, discussion, and practical exercises. The second half of the semester is organized around a three-part interview simulation."},
+      {"title":"Interdisciplinary Analyses in European Global Studies","meta":"MA seminar · University of Basel · fall, block format · with Carlotta Manz","blurb":"This seminar teaches master’s students to write an analytical literature review that draws on several disciplines, as preparation for the thesis. Each student works on a topic of their own choosing, usually the intended thesis topic, and develops it from an annotated bibliography to a final paper with written feedback from peers and both instructors."},
+      {"title":"Qualitative Approaches to Studying Political Repression","meta":"BA seminar · University of Basel · spring","blurb":"This seminar introduces qualitative methods for studying political repression, including its everyday practices and its extension across borders. Students learn to conduct research with vulnerable populations, to map networks of repression, and to use digital methods for data collection and verification. Research ethics and the security of researchers and participants are addressed throughout."}
     ];
 
     const employment = [
@@ -1354,7 +1308,7 @@ class Component extends DCLogic {
       isHome: page==='home', isResearch: page==='research', isPubs: page==='publications',
       isTeaching: page==='teaching', isPhotos: page==='photos', isCV: page==='cv',
       featured, pubGroups, books, fieldwork,
-      teachingUZH, teachingBasel, teachingCornell, supervision,
+      courses,
       employment, education, grants
     };
   }
