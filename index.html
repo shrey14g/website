@@ -1259,18 +1259,6 @@
       </div>
 
       <!-- References -->
-      <section style="margin-top:56px;">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#3f3b34;padding-bottom:10px;border-bottom:1px solid #d6d2c8;">References</div>
-        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;margin-top:24px;">
-          <sc-for list="{{ references }}" as="r" hint-placeholder-count="3">
-            <div style="border:1px solid #e4e1d8;border-radius:3px;padding:22px;background:#f3f1ea;">
-              <div style="font-family:var(--display,'Frank Ruhl Libre'),serif;font-size:18px;color:#232220;margin-bottom:8px;">{{ r.name }}</div>
-              <div style="font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;color:#6e6960;line-height:1.55;margin-bottom:12px;">{{ r.role }}</div>
-              <a href="{{ r.mailto }}" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--accent,#295fa0);text-decoration:none;word-break:break-all;" style-hover="color:#3f78c0;">{{ r.email }}</a>
-            </div>
-          </sc-for>
-        </div>
-      </section>
     </div>
     </sc-if>
 
@@ -1383,7 +1371,7 @@ class Component extends DCLogic {
     ];
 
     const teachingBasel = [
-      { term:'Fall 2026', courses:[ {title:'Mixed Social Science Methods for European Global Studies', level:'MA seminar'}, {title:'Applied Qualitative Methods for Political Science', level:'BA seminar'} ] },
+      { term:'Fall 2026', courses:[ {title:'Mixed Social Science Methods for European Global Studies', level:'MA seminar'}, {title:'Interdisciplinary Analyses in European Global Studies', level:'MA, with Carlotta Manz'}, {title:'Applied Qualitative Methods for Political Science', level:'BA seminar'} ] },
       { term:'Spring 2026', courses:[ {title:'Advanced Interdisciplinarity for European Global Studies', level:'PhD seminar'}, {title:'Interdisciplinary Analyses in European Global Studies', level:'MA, with Carlotta Manz'}, {title:'Qualitative Approaches to Political Repression', level:'BA seminar'} ] },
       { term:'Fall 2025', courses:[ {title:'Mixed Social Science Methods for European Global Studies', level:'MA seminar'}, {title:'Interdisciplinary Analyses in European Global Studies', level:'MA, with Carlotta Manz'}, {title:'Applied Qualitative Methods for Political Science', level:'BA seminar'} ] },
       { term:'Spring 2025', courses:[ {title:'Advanced Interdisciplinarity for European Global Studies', level:'PhD seminar'}, {title:'Interdisciplinary Analyses in European Global Studies', level:'MA, with Barbara von Rütte'}, {title:'Qualitative Approaches to Studying Transnational Repression', level:'BA seminar'} ] },
@@ -1448,12 +1436,6 @@ class Component extends DCLogic {
       { year:'2017', text:'Chair, Cornell Development Sociology Graduate Student Collective.' }
     ];
 
-    const references = [
-      { name:'Christophe Jaffrelot', role:'CERI-CNRS Senior Research Fellow, Sciences Po Paris', email:'christophe.jaffrelot@sciencespo.fr', mailto:'mailto:christophe.jaffrelot@sciencespo.fr' },
-      { name:'Fouad Makki', role:'Associate Professor, Cornell Department of Global Development', email:'fmm2@cornell.edu', mailto:'mailto:fmm2@cornell.edu' },
-      { name:'Ralph Weber', role:'Associate Professor of European Global Studies, University of Basel', email:'ralph.weber@unibas.ch', mailto:'mailto:ralph.weber@unibas.ch' }
-    ];
-
     const navItems = [
       { label:'Home', active: page==='home', onClick: go('home') },
       { label:'Research', active: page==='research', onClick: go('research') },
@@ -1475,7 +1457,7 @@ class Component extends DCLogic {
       isTeaching: page==='teaching', isPhotos: page==='photos', isCV: page==='cv',
       featured, pubGroups, books, fieldwork,
       teachingUZH, teachingBasel, teachingCornell, supervision,
-      employment, education, grants, networks, service, references
+      employment, education, grants, networks, service
     };
   }
 }
