@@ -982,19 +982,6 @@
       </div>
 
       <!-- book projects -->
-      <section style="margin-top:80px;">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent,#295fa0);margin-bottom:24px;">Book Projects</div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;">
-          <sc-for list="{{ books }}" as="bk" hint-placeholder-count="2">
-            <div style="border:1px solid #e4e1d8;border-radius:3px;padding:28px;background:#f3f1ea;">
-              <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent,#295fa0);margin-bottom:14px;">{{ bk.status }}</div>
-              <div style="font-family:var(--display,'Frank Ruhl Libre'),serif;font-size:21px;line-height:1.35;color:#232220;margin-bottom:14px;">{{ bk.title }}</div>
-              <div style="font-family:'IBM Plex Sans',sans-serif;font-size:14px;color:#6e6960;line-height:1.6;">{{ bk.authors }}</div>
-              <div style="margin-top:4px;font-family:'IBM Plex Sans',sans-serif;font-size:14px;font-style:italic;color:#6e6960;line-height:1.6;">{{ bk.venue }}</div>
-            </div>
-          </sc-for>
-        </div>
-      </section>
 
       <!-- fieldwork -->
       <section style="margin-top:72px;padding-bottom:96px;">
@@ -1056,8 +1043,7 @@
       <section style="margin-top:56px;">
         <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#3f3b34;padding-bottom:10px;border-bottom:1px solid #d6d2c8;">University of Zürich</div>
         <sc-for list="{{ teachingUZH }}" as="grp" hint-placeholder-count="1">
-          <div style="display:grid;grid-template-columns:140px 1fr;gap:28px;padding:18px 0;border-bottom:1px solid #eae7df;">
-            <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--accent,#295fa0);padding-top:3px;">{{ grp.term }}</div>
+          <div style="padding:18px 0;border-bottom:1px solid #eae7df;">
             <div>
               <sc-for list="{{ grp.courses }}" as="c" hint-placeholder-count="1">
                 <div style="margin-bottom:8px;"><span style="font-family:var(--display,'Frank Ruhl Libre'),serif;font-size:18px;color:#232220;">{{ c.title }}</span> <span style="font-family:'IBM Plex Sans',sans-serif;font-size:13px;color:#8a857b;">· {{ c.level }}</span></div>
@@ -1071,8 +1057,7 @@
       <section style="margin-top:48px;">
         <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#3f3b34;padding-bottom:10px;border-bottom:1px solid #d6d2c8;">University of Basel</div>
         <sc-for list="{{ teachingBasel }}" as="grp" hint-placeholder-count="6">
-          <div style="display:grid;grid-template-columns:140px 1fr;gap:28px;padding:18px 0;border-bottom:1px solid #eae7df;">
-            <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--accent,#295fa0);padding-top:3px;">{{ grp.term }}</div>
+          <div style="padding:18px 0;border-bottom:1px solid #eae7df;">
             <div>
               <sc-for list="{{ grp.courses }}" as="c" hint-placeholder-count="2">
                 <div style="margin-bottom:8px;"><span style="font-family:var(--display,'Frank Ruhl Libre'),serif;font-size:18px;color:#232220;">{{ c.title }}</span> <span style="font-family:'IBM Plex Sans',sans-serif;font-size:13px;color:#8a857b;">· {{ c.level }}</span></div>
@@ -1086,8 +1071,7 @@
       <section style="margin-top:48px;">
         <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#3f3b34;padding-bottom:10px;border-bottom:1px solid #d6d2c8;">Cornell University</div>
         <sc-for list="{{ teachingCornell }}" as="grp" hint-placeholder-count="2">
-          <div style="display:grid;grid-template-columns:140px 1fr;gap:28px;padding:18px 0;border-bottom:1px solid #eae7df;">
-            <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--accent,#295fa0);padding-top:3px;">{{ grp.term }}</div>
+          <div style="padding:18px 0;border-bottom:1px solid #eae7df;">
             <div>
               <sc-for list="{{ grp.courses }}" as="c" hint-placeholder-count="1">
                 <div style="margin-bottom:8px;"><span style="font-family:var(--display,'Frank Ruhl Libre'),serif;font-size:18px;color:#232220;">{{ c.title }}</span> <span style="font-family:'IBM Plex Sans',sans-serif;font-size:13px;color:#8a857b;">· {{ c.level }}</span></div>
@@ -1191,8 +1175,8 @@
         </sc-for>
       </section>
 
-      <!-- two-column: Grants + Networks -->
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:48px;">
+      <!-- Grants -->
+      <div style="display:grid;grid-template-columns:1fr;gap:48px;margin-top:48px;">
         <section>
           <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#3f3b34;padding-bottom:10px;border-bottom:1px solid #d6d2c8;">Grants &amp; Fellowships</div>
           <sc-for list="{{ grants }}" as="g" hint-placeholder-count="5">
@@ -1205,45 +1189,10 @@
             </div>
           </sc-for>
         </section>
-        <section>
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#3f3b34;padding-bottom:10px;border-bottom:1px solid #d6d2c8;">Research Networks</div>
-          <sc-for list="{{ networks }}" as="n" hint-placeholder-count="4">
-            <div style="padding:16px 0;border-bottom:1px solid #eae7df;">
-              <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--accent,#295fa0);">{{ n.year }}</span>
-              <div style="margin-top:6px;font-family:'IBM Plex Sans',sans-serif;font-size:14.5px;color:#4a463e;line-height:1.55;">{{ n.text }}</div>
-            </div>
-          </sc-for>
-        </section>
       </div>
 
-      <!-- Service -->
-      <section style="margin-top:48px;">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#3f3b34;padding-bottom:10px;border-bottom:1px solid #d6d2c8;">Service</div>
-        <sc-for list="{{ service }}" as="s" hint-placeholder-count="7">
-          <div style="display:grid;grid-template-columns:140px 1fr;gap:28px;padding:14px 0;border-bottom:1px solid #eae7df;">
-            <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--accent,#295fa0);">{{ s.year }}</div>
-            <div style="font-family:'IBM Plex Sans',sans-serif;font-size:15px;color:#4a463e;line-height:1.55;">{{ s.text }}</div>
-          </div>
-        </sc-for>
-      </section>
 
-      <!-- Languages, Skills, Memberships -->
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px;margin-top:48px;">
-        <section>
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent,#295fa0);margin-bottom:14px;">Languages</div>
-          <div style="font-family:'IBM Plex Sans',sans-serif;font-size:15px;color:#4a463e;line-height:1.8;">English, German, Hindi <span style="color:#8a857b;">(native)</span><br>French <span style="color:#8a857b;">(C2)</span><br>Spanish <span style="color:#8a857b;">(B2)</span></div>
-        </section>
-        <section>
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent,#295fa0);margin-bottom:14px;">Methods &amp; Tools</div>
-          <div style="font-family:'IBM Plex Sans',sans-serif;font-size:15px;color:#4a463e;line-height:1.8;">ATLAS.ti<br>MAXQDA<br>Stata</div>
-        </section>
-        <section>
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent,#295fa0);margin-bottom:14px;">Memberships</div>
-          <div style="font-family:'IBM Plex Sans',sans-serif;font-size:14px;color:#4a463e;line-height:1.75;">American Sociological Association · European Association for South Asian Studies · European International Studies Association · International Studies Association</div>
-        </section>
-      </div>
 
-      <!-- References -->
     </div>
     </sc-if>
 
@@ -1311,11 +1260,6 @@ class Component extends DCLogic {
       { year:'2013', title:'Assessment of SHG and SHG Mahasanghas formed under SGSY', authors:'Ghosh, S., Kapoor, S. & Ranjan, K.', venue:'Commissioned by the Government of West Bengal & the World Bank' }
     ];
 
-    const reviews = [
-      { year:'2011', title:'Crouching Dragon, Hidden Tiger: Can China and India Dominate the West? (Prem Shankar Jha) [in German]', authors:'Kapoor, S. & Lietha, V.', venue:'Aussenwirtschaft 66(1), 217–221', meta:true, url:'https://www.proquest.com/openview/c6bedf4cf4b3da4a85779cee7350acd2/1?pq-origsite=gscholar&cbl=46232', urlLabel:'Link ↗' },
-      { year:'2010', title:'Serving Whose Interests? The Political Economy of Trade in Services Agreements (Jane Kelsey) [in German]', authors:'Kapoor, S. & Lietha, V.', venue:'Aussenwirtschaft 65(2), 133–137', meta:true, url:'https://www.econstor.eu/bitstream/10419/231198/1/aussenwirtschaft-v65-i02-p217-220.pdf', urlLabel:'PDF ↗' }
-    ];
-
     const media = [
       { year:'2025', title:'«Ich weiss, wer Sie sind und was Sie tun» — interview [in German]', authors:'By Mirko Plüss · quoting S. Kapoor', venue:'NZZ am Sonntag, 13 September 2025, p. 13', meta:true, url:'https://www.nzz.ch/schweiz/in-genf-drohte-ihr-der-verfolger-beim-hotelfruehstueck-ich-kann-dich-sofort-verhaften-ld.1902025', urlLabel:'Read ↗' },
       { year:'2025', title:'Grenzenlose Kontrolle: Chinas Repression im Ausland [in German]', authors:'Weber, R. & Kapoor, S.', venue:'Brennpunkt Tibet, 03/2025, 7–13', meta:true, url:'https://www.tibet-initiative.de/erkenntnisse-aus-der-basler-studie-grenzenlose-kontrolle-chinas-repression-im-ausland/', urlLabel:'Read ↗' },
@@ -1335,7 +1279,6 @@ class Component extends DCLogic {
       { label:'Journal Articles', items:journalArticles },
       { label:'Book Chapters', items:bookChapters },
       { label:'Commissioned Research Reports', items:reports },
-      { label:'Book Reviews', items:reviews },
       { label:'Policy & Media Contributions', items:media }
     ].map(g => ({ ...g, count: String(g.items.length).padStart(2,'0') }));
 
@@ -1352,30 +1295,15 @@ class Component extends DCLogic {
     ];
 
     const teachingUZH = [
-      { term:'Spring 2026', courses:[ { title:'Mixed Methods in the Social Sciences: Epistemologies, Practices, Politics', level:'MA seminar' } ] }
+      { term:'', courses:[ {title:'Mixed Methods in the Social Sciences: Epistemologies, Practices, Politics', level:'MA seminar'} ] }
     ];
 
     const teachingBasel = [
-      { term:'Fall 2026', courses:[ {title:'Mixed Social Science Methods for European Global Studies', level:'MA seminar'}, {title:'Interdisciplinary Analyses in European Global Studies', level:'MA, with Carlotta Manz'}, {title:'Applied Qualitative Methods for Political Science', level:'BA seminar'} ] },
-      { term:'Spring 2026', courses:[ {title:'Advanced Interdisciplinarity for European Global Studies', level:'PhD seminar'}, {title:'Interdisciplinary Analyses in European Global Studies', level:'MA, with Carlotta Manz'}, {title:'Qualitative Approaches to Political Repression', level:'BA seminar'} ] },
-      { term:'Fall 2025', courses:[ {title:'Mixed Social Science Methods for European Global Studies', level:'MA seminar'}, {title:'Interdisciplinary Analyses in European Global Studies', level:'MA, with Carlotta Manz'}, {title:'Applied Qualitative Methods for Political Science', level:'BA seminar'} ] },
-      { term:'Spring 2025', courses:[ {title:'Advanced Interdisciplinarity for European Global Studies', level:'PhD seminar'}, {title:'Interdisciplinary Analyses in European Global Studies', level:'MA, with Barbara von Rütte'}, {title:'Qualitative Approaches to Studying Transnational Repression', level:'BA seminar'} ] },
-      { term:'Fall 2024', courses:[ {title:'Mixed Social Science Methods for European Global Studies', level:'MA seminar'}, {title:'Interdisciplinary Analyses in European Global Studies', level:'MA, with Barbara von Rütte'}, {title:'Current Debates in History & Politics', level:'MA colloquium, with Corey Ross'}, {title:'Applied Qualitative Methods for Political Science', level:'BA seminar'} ] },
-      { term:'Spring 2024', courses:[ {title:'Advanced Interdisciplinarity for European Global Studies', level:'PhD seminar'}, {title:'Interdisciplinary Analyses in European Global Studies', level:'MA, with Barbara von Rütte'} ] },
-      { term:'Fall 2023', courses:[ {title:'Mixed Social Science Methods for European Global Studies', level:'MA seminar'}, {title:'European Global Studies: Focus Transnational Repression', level:'MA lecture series, with Ralph Weber'}, {title:'Interdisciplinary Analyses in European Global Studies', level:'MA, with von Rütte & Philippe Major'} ] },
-      { term:'Spring 2023', courses:[ {title:'Advanced Interdisciplinarity for European Global Studies', level:'PhD seminar'}, {title:'Current Debates in History & Politics', level:'MA colloquium, with Madeleine Herren'} ] },
-      { term:'Fall 2022', courses:[ {title:'Mixed Social Science Methods for European Global Studies', level:'MA seminar'}, {title:'Current Debates in History & Politics', level:'MA colloquium, with Madeleine Herren'} ] },
-      { term:'Spring 2022', courses:[ {title:'Advanced Interdisciplinarity for European Global Studies', level:'PhD seminar'}, {title:'Current Debates in History & Politics', level:'MA colloquium, with Madeleine Herren'} ] },
-      { term:'Fall 2021', courses:[ {title:'Mixed Social Science Methods for European Global Studies', level:'MA seminar'} ] },
-      { term:'Fall 2020', courses:[ {title:'Current Debates in Culture & Society', level:'MA colloquium, with Ralph Weber'} ] },
-      { term:'Fall 2019', courses:[ {title:'Interdisciplinary Research Designs for European Global Studies', level:'MA, with Ralph Weber'}, {title:'Interdisciplinary Analyses in European Global Studies', level:'MA colloquium, with Weber & Herren'} ] },
-      { term:'Spring 2016', courses:[ {title:'Global Debates, Eurocentrism and Methodology', level:'MA seminar, TA for Ralph Weber'} ] },
-      { term:'Spring 2015', courses:[ {title:'Probleme der Eurozentrismuskritik', level:'BA seminar, TA for Ralph Weber'} ] }
+      { term:'', courses:[ {title:'Mixed Social Science Methods for European Global Studies', level:'MA seminar'}, {title:'Interdisciplinary Analyses in European Global Studies', level:'MA, with Carlotta Manz'}, {title:'Applied Qualitative Methods for Political Science', level:'BA seminar'}, {title:'Advanced Interdisciplinarity for European Global Studies', level:'PhD seminar'}, {title:'Qualitative Approaches to Political Repression', level:'BA seminar'}, {title:'Qualitative Approaches to Studying Transnational Repression', level:'BA seminar'}, {title:'Current Debates in History & Politics', level:'MA colloquium, with Corey Ross'}, {title:'European Global Studies: Focus Transnational Repression', level:'MA lecture series, with Ralph Weber'}, {title:'Current Debates in Culture & Society', level:'MA colloquium, with Ralph Weber'}, {title:'Interdisciplinary Research Designs for European Global Studies', level:'MA, with Ralph Weber'}, {title:'Global Debates, Eurocentrism and Methodology', level:'MA seminar, TA for Ralph Weber'}, {title:'Probleme der Eurozentrismuskritik', level:'BA seminar, TA for Ralph Weber'} ] }
     ];
 
     const teachingCornell = [
-      { term:'Spring 2019', courses:[ {title:'International Development', level:'BA lecture, TA for Phil McMichael'} ] },
-      { term:'Fall 2018', courses:[ {title:'Theories of Development Sociology', level:'BA seminar, TA for Fouad Makki'} ] }
+      { term:'', courses:[ {title:'International Development', level:'BA lecture, TA for Phil McMichael'}, {title:'Theories of Development Sociology', level:'BA seminar, TA for Fouad Makki'} ] }
     ];
 
     const supervision = [
@@ -1406,21 +1334,6 @@ class Component extends DCLogic {
       { year:'2020', amt:'', text:'American Institute for Indian Studies (AIIS) Junior Research Fellowship, alternate list.' }
     ];
 
-    const networks = [
-      { year:'2020–2024', text:'Henry Luce Foundation, Indian Muslims Today. Co-leader of the ghettoization research cluster (with R. Susewind); in collaboration with Sciences Po, Princeton & Columbia.' },
-      { year:'2019', text:'Polson Working Group on Infrastructure, State, Cyborg, Cornell University (member).' },
-      { year:'2018', text:'ICM Reading Group on Dalit Studies & the Question of Caste, Cornell University (member).' },
-      { year:'2016', text:'Polson Working Group on The Contested Significance of Land, Cornell University (co-organizer).' }
-    ];
-
-    const service = [
-      { year:'2026–', text:'Study Advisor, MA Modern Asian & Middle Eastern Studies (MAMES), University of Zürich, board membership, curriculum coordination and core-course administration.' },
-      { year:'2025–', text:'Member, Interfaculty Commission for the MA European Global Studies.' },
-      { year:'2025', text:'Author, White Paper on Strengthening the PhD Program in European Global Studies, University of Basel.' },
-      { year:'2018–', text:'Reviewer for Contemporary South Asia; Environment and Planning D: Society and Space; Global Policy; International Journal of Urban and Regional Research; Journal of Housing and the Built Environment; Renewable Agriculture and Food Systems; and Urban Political Ecology.' },
-      { year:'2017', text:'Chair, Cornell Development Sociology Graduate Student Collective.' }
-    ];
-
     const navItems = [
       { label:'Home', active: page==='home', onClick: go('home') },
       { label:'Research', active: page==='research', onClick: go('research') },
@@ -1442,7 +1355,7 @@ class Component extends DCLogic {
       isTeaching: page==='teaching', isPhotos: page==='photos', isCV: page==='cv',
       featured, pubGroups, books, fieldwork,
       teachingUZH, teachingBasel, teachingCornell, supervision,
-      employment, education, grants, networks, service
+      employment, education, grants
     };
   }
 }
